@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name" translatable="false">Credential Manager</string>
+    <string name="login">Login</string>
+    <string name="hellow_word">Hello world</string>
+</resources>
