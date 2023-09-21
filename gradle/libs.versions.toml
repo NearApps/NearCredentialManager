@@ -8,6 +8,15 @@ espresso-core = "3.5.1"
 lifecycle-runtime-ktx = "2.6.1"
 activity-compose = "1.7.0"
 compose-bom = "2023.03.00"
+arrow = "1.0.1"
+vitamin-core = "0.3.0-beta04"
+dagger-hilt = "2.44"
+dagger-hilt-androidx = "1.0.0"
+google-services-plugin = "4.3.15"
+retrofit = "2.9.0"
+moshi = "1.15.0"
+okhttp3 = "4.9.2"
+room = "2.5.0"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -24,10 +33,41 @@ ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview
 ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 material3 = { group = "androidx.compose.material3", name = "material3" }
+arrow_core = { group = "io.arrow-kt", name = "arrow-core", version.ref = "arrow" }
+vitamin-foundation = { group = "com.decathlon.vitamin.compose", name = "foundation", version.ref = "vitamin-core" }
+vitamin-buttons = { group = "com.decathlon.vitamin.compose", name = "buttons", version.ref = "vitamin-core" }
+vitamin-text-inputs = { group = "com.decathlon.vitamin.compose", name = "text-inputs", version.ref = "vitamin-core" }
+vitamin-badges = { group = "com.decathlon.vitamin.compose", name = "badges", version.ref = "vitamin-core" }
+vitamin-progressbars = { group = "com.decathlon.vitamin.compose", name = "progressbars", version.ref = "vitamin-core" }
+vitamin-ratings = { group = "com.decathlon.vitamin.compose", name = "ratings", version.ref = "vitamin-core" }
+vitamin-tags = { group = "com.decathlon.vitamin.compose", name = "tags", version.ref = "vitamin-core" }
+vitamin-appbars = { group = "com.decathlon.vitamin.compose", name = "appbars", version.ref = "vitamin-core" }
+vitamin-modals = { group = "com.decathlon.vitamin.compose", name = "modals", version.ref = "vitamin-core" }
+vitamin-cards = { group = "com.decathlon.vitamin.compose", name = "cards", version.ref = "vitamin-core" }
+vitamin-dividers = { group = "com.decathlon.vitamin.compose", name = "dividers", version.ref = "vitamin-core" }
+dagger-hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "dagger-hilt" }
+dagger-hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "dagger-hilt" }
+dagger-hilt-androidx-compiler = { group = "androidx.hilt", name = "hilt-compiler", version.ref = "dagger-hilt-androidx" }
+dagger-hilt-androidx-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "dagger-hilt-androidx" }
+retrofit2 = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit2-converter-moshi = { group = "com.squareup.retrofit2", name = "converter-moshi", version.ref = "retrofit" }
+moshi = { group = "com.squareup.moshi", name = "moshi", version.ref = "moshi" }
+moshi-kotlin = { group = "com.squareup.moshi", name = "moshi-kotlin", version.ref = "moshi" }
+moshi-kotlin-codegen = { group = "com.squareup.moshi", name = "moshi-kotlin-codegen", version.ref = "moshi" }
+okhttp3-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp3" }
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+room-testing = { group = "androidx.room", name = "room-testing", version.ref = "room" }
+room-paginator = { group = "androidx.room", name = "room-paging", version.ref = "room" }
+
 
 [plugins]
 com-android-application = { id = "com.android.application", version.ref = "agp" }
 org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "org-jetbrains-kotlin-android" }
+com-android-library = { id = "com.android.library", version.ref = "agp" }
+gms-google-services = { id = "com.google.gms.google-services", version.ref = "google-services-plugin" }
+dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "dagger-hilt" }
 
 [bundles]
 

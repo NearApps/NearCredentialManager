@@ -1,4 +1,4 @@
-package io.github.nearapps.credential_manager
+package io.github.nearapps.credential_manager.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import io.github.nearapps.credential_manager.R
 import io.github.nearapps.credential_manager.ui.theme.CredentialManagerTheme
 
 class MainActivity : ComponentActivity() {
@@ -18,7 +19,6 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             CredentialManagerTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background

@@ -2,18 +2,26 @@
 plugins {
     alias(libs.plugins.com.android.application)
     alias(libs.plugins.org.jetbrains.kotlin.android)
+
+    // Google Services
+    alias(libs.plugins.gms.google.services)
+
+    // Dagger Hilt
+    alias(libs.plugins.dagger.hilt)
+
+    kotlin("kapt")
 }
 
 android {
-    namespace = "io.github.nearapps.credential_manager"
-    compileSdk = 33
+    namespace = rootProject.extra["package_name"] as String
+    compileSdk = rootProject.extra["compile_sdk"] as Int
 
     defaultConfig {
-        applicationId = "io.github.nearapps.credential_manager"
-        minSdk = 24
-        targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = rootProject.extra["package_name"] as String
+        minSdk = rootProject.extra["min_sdk"] as Int
+        targetSdk = rootProject.extra["compile_sdk"] as Int
+        versionCode = rootProject.extra["version_code"] as Int
+        versionName = rootProject.extra["version_name"] as String
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -33,11 +41,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = JavaVersion.VERSION_17.toString()
     }
     buildFeatures {
         compose = true
@@ -53,14 +61,50 @@ android {
 }
 
 dependencies {
+
+    // Modules
+    implementation(project(":modules:framework"))
+    implementation(project(":modules:domain"))
+
+    // Kotlin
     implementation(libs.core.ktx)
+
+    // Lifecycle
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.activity.compose)
+
+    // Compose
     implementation(platform(libs.compose.bom))
     implementation(libs.ui)
     implementation(libs.ui.graphics)
     implementation(libs.ui.tooling.preview)
+
+    // Material 3
     implementation(libs.material3)
+
+    // Dagger Hilt
+    implementation(libs.dagger.hilt)
+    kapt(libs.dagger.hilt.compiler)
+    kapt(libs.dagger.hilt.androidx.compiler)
+    implementation(libs.dagger.hilt.androidx.compose)
+
+    // Vitamin Compose
+    implementation(libs.vitamin.foundation)
+    implementation(libs.vitamin.buttons)
+    implementation(libs.vitamin.text.inputs)
+    implementation(libs.vitamin.badges)
+    implementation(libs.vitamin.progressbars)
+    implementation(libs.vitamin.ratings)
+    implementation(libs.vitamin.tags)
+    implementation(libs.vitamin.appbars)
+    implementation(libs.vitamin.modals)
+    implementation(libs.vitamin.cards)
+    implementation(libs.vitamin.dividers)
+
+    // Firebase
+    implementation("com.google.firebase:firebase-analytics-ktx:21.3.0")
+
+    // Testing
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
@@ -68,4 +112,6 @@ dependencies {
     androidTestImplementation(libs.ui.test.junit4)
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
+    // Testing Room
+    testImplementation(libs.room.testing)
 }
